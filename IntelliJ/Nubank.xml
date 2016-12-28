@@ -1,0 +1,8 @@
+<code_scheme name="Nubank">
+  <ClojureCodeStyleSettings>{
+  :common-http-client.components.mock-http/with-responses :only-indent
+  :common-test.postman.core/as-of :only-indent
+  :common-test.postman.flow/flow :only-indent
+  :midje.sweet/facts :only-indent
+}</ClojureCodeStyleSettings>
+</code_scheme>

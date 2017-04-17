@@ -480,11 +480,19 @@ pairwise constructs as found in e.g. `let` and `cond`.
 
 * <a name="stuart-sierra-namespace-guideline"></a>
   Adopt [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
-  unless there is a strong reason not to do so or this style guide says otherwise.
+  unless there is a strong reason not to do so or this style guide says otherwise. 
 <sup>[[link](#stuart-sierra-namespace-guideline)]</sup>
 
+
+* <a name="service-namespaces-should-be-consistent"></a>
+  Do not use different aliases for the same namespaces within a service.
+  Ideally, consistency between different services should also be sought when possible.
+<sup>[[link](#service-namespaces-should-be-consistent)]</sup>
+
 * <a name="commonly-used-namespaces"></a>
-  Keep commonly used namespace abbreviations to maintain consistency between services, such as:
+  [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
+  allows frequently used namespaces or estabilished conventions within the community to be whitelisted from the general rule.
+  The namespaces that fall within this category are listed below:
 
     ```Clojure
     [schema.core :as s]
@@ -494,18 +502,6 @@ pairwise constructs as found in e.g. `let` and `cond`.
     ```
     
 <sup>[[link](#commonly-used-namespaces)]</sup>
-
-* <a name="common-namespace-segments"></a>
-  Prefer these abbreviations for common namespace segments used inside services:
-
-  ```Clojure 
-  [service-name.controllers.some-name :as c.some-name]
-  [service-name.db.datomic.some-name :as db.some-name]
-  [service-name.logic.some-name :as l.some-name]
-  [service-name.models.some-name :as m.some-name]
-  ```
-
-<sup>[[link](#common-namespace-segments)]</sup>
 
 * <a name="prefer-require-over-use"></a>
   In the `ns` form prefer `:require :as` over `:require :refer` over `:require

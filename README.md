@@ -34,8 +34,10 @@ You can generate a PDF or an HTML copy of this guide using
 
 Translations of the guide are available in the following languages:
 
+* [Chinese](https://github.com/geekerzp/clojure-style-guide/blob/master/README-zhCN.md)
 * [Japanese](https://github.com/totakke/clojure-style-guide/blob/ja/README.md)
 * [Korean](https://github.com/kwakbab/clojure-style-guide/blob/master/README-koKO.md)
+* [Portuguese](https://github.com/theSkilled/clojure-style-guide/blob/pt-BR/README.md) (Under progress)
 
 ## Table of Contents
 
@@ -51,6 +53,7 @@ Translations of the guide are available in the following languages:
     * [Comment Annotations](#comment-annotations)
 * [Existential](#existential)
 * [Tooling](#tooling)
+* [Testing](#testing)
 
 ## Source Code Layout & Organization
 
@@ -819,7 +822,7 @@ pairwise constructs as found in e.g. `let` and `cond`.
     exists in the form of a separate function (e.g. `even?` and `odd?`).
 
 * <a name="comp"></a>
-  Leverage `comp` when it would yield simpler code.
+  Leverage `comp` when doing so yields simpler code.
 <sup>[[link](#comp)]</sup>
 
     ```Clojure
@@ -833,7 +836,7 @@ pairwise constructs as found in e.g. `let` and `cond`.
     ```
 
 * <a name="partial"></a>
-  Leverage `partial` when it would yield simpler code.
+  Leverage `partial` when doing so yields simpler code.
 <sup>[[link](#partial)]</sup>
 
     ```Clojure
@@ -879,13 +882,13 @@ pairwise constructs as found in e.g. `let` and `cond`.
     (cond
       (< n 0) "negative"
       (> n 0) "positive"
-      :else "zero"))
+      :else "zero")
 
     ;; bad
     (cond
       (< n 0) "negative"
       (> n 0) "positive"
-      true "zero"))
+      true "zero")
     ```
 
 * <a name="condp"></a>
@@ -1631,14 +1634,43 @@ you need to comment out a particular form.
 There are some tools created by the Clojure community that might aid you
 in your endeavor to write idiomatic Clojure code.
 
-* [Slamhound](https://github.com/technomancy/slamhound) is a tool that
-will automatically generate proper `ns` declarations from your
-existing code.
-* [kibit](https://github.com/jonase/kibit) is a static code analyzer
-  for Clojure which uses
-  [core.logic](https://github.com/clojure/core.logic) to search for
-  patterns of code for which there might exist a more idiomatic
+* [Slamhound](https://github.com/technomancy/slamhound) is a tool that will
+  automatically generate proper `ns` declarations from your existing code.
+
+* [kibit](https://github.com/jonase/kibit) is a static code analyzer for
+  Clojure which uses [core.logic](https://github.com/clojure/core.logic) to
+  search for patterns of code for which there might exist a more idiomatic
   function or macro.
+
+## Testing
+
+ * <a name="test-directory-structure"></a>
+   Store your tests in a separate directory, typically `test/yourproject/` (as
+   opposed to `src/yourproject/`). Your build tool is responsible for making
+   them available in the contexts where they are necessary; most templates
+   will do this for you automatically.
+   <sup>[[link](#test-directory-structure)]</sup>
+
+ * <a name="test-ns-naming"></a>
+   Name your ns `yourproject.something-test`, a file which usually lives in
+   `test/yourproject/something_test.clj` (or `.cljc`, `cljs`).
+   <sup>[[link](#test-ns-naming)]</sup>
+
+ * <a name="test-naming"></a> When using `clojure.test`, define your tests
+   with `deftest` and name them `something-test`. For example:
+
+   ```clojure
+   ;; good
+   (deftest something-test ...)
+
+   ;; bad
+   (deftest something-tests ...)
+   (deftest test-something ...)
+   (deftest something ...)
+   ```
+
+   <sup>[[link](#test-naming)]</sup>
+
 
 # Contributing
 

@@ -462,10 +462,52 @@ pairwise constructs as found in e.g. `let` and `cond`.
                                      LinkedBlockingQueue]))
     ```
 
+* <a name="10-loc-per-fn-limit"></a>
+  Avoid functions longer than 10 LOC (lines of code). Ideally, most
+  functions will be shorter than 5 LOC.
+<sup>[[link](#10-loc-per-fn-limit)]</sup>
+
+* <a name="4-positional-fn-params-limit"></a>
+  Avoid parameter lists with more than three or four positional parameters.
+<sup>[[link](#4-positional-fn-params-limit)]</sup>
+
+* <a name="forward-references"></a>
+  Avoid forward references.  They are occasionally necessary, but such occasions
+  are rare in practice.
+<sup>[[link](#forward-references)]</sup>
+
+## Namespaces
+
+* <a name="stuart-sierra-namespace-guideline"></a>
+  Adopt [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
+  unless there is a strong reason not to do so or this style guide says otherwise. 
+<sup>[[link](#stuart-sierra-namespace-guideline)]</sup>
+
+
+* <a name="service-namespaces-should-be-consistent"></a>
+  Do not use different aliases for the same namespaces within a service.
+  Ideally, consistency between different services should also be sought when possible.
+<sup>[[link](#service-namespaces-should-be-consistent)]</sup>
+
+* <a name="commonly-used-namespaces"></a>
+  [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
+  allows frequently used namespaces or estabilished conventions within the community to be whitelisted from the general rule.
+  The namespaces that fall within this category are listed below:
+
+    ```Clojure
+    [schema.core :as s]
+    [common-datomic.api :as db]
+    [common-datomic.db :as ddb]
+    [datomic.api :as d]
+    ```
+    
+<sup>[[link](#commonly-used-namespaces)]</sup>
+
 * <a name="prefer-require-over-use"></a>
   In the `ns` form prefer `:require :as` over `:require :refer` over `:require
   :refer :all`.  Prefer `:require` over `:use`; the latter form should be
-  considered deprecated for new code.
+  considered deprecated for new code. Using `:refer` is acceptable when the symbols are
+  types or schemas.
 <sup>[[link](#prefer-require-over-use)]</sup>
 
     ```Clojure
@@ -501,20 +543,6 @@ pairwise constructs as found in e.g. `let` and `cond`.
 * <a name="namespaces-with-5-segments-max"></a>
   Avoid the use of overly long namespaces (i.e., more than 5 segments).
 <sup>[[link](#namespaces-with-5-segments-max)]</sup>
-
-* <a name="10-loc-per-fn-limit"></a>
-  Avoid functions longer than 10 LOC (lines of code). Ideally, most
-  functions will be shorter than 5 LOC.
-<sup>[[link](#10-loc-per-fn-limit)]</sup>
-
-* <a name="4-positional-fn-params-limit"></a>
-  Avoid parameter lists with more than three or four positional parameters.
-<sup>[[link](#4-positional-fn-params-limit)]</sup>
-
-* <a name="forward-references"></a>
-  Avoid forward references.  They are occasionally necessary, but such occasions
-  are rare in practice.
-<sup>[[link](#forward-references)]</sup>
 
 ## Syntax
 

@@ -9,35 +9,8 @@ programmers. A style guide that reflects real-world usage gets used, and a
 style guide that holds to an ideal that has been rejected by the people it is
 supposed to help risks not getting used at all &mdash; no matter how good it is.
 
-The guide is separated into several sections of related rules. I've
-tried to add the rationale behind the rules (if it's omitted, I've
-assumed that it's pretty obvious).
-
-I didn't come up with all the rules out of nowhere; they are mostly
-based on my extensive career as a professional software engineer,
-feedback and suggestions from members of the Clojure community, and
-various highly regarded Clojure programming resources, such as
-["Clojure Programming"](http://www.clojurebook.com/)
-and ["The Joy of Clojure"](http://joyofclojure.com/).
-
-The guide is still a work in progress; some sections are missing,
-others are incomplete, some rules are lacking examples, some rules
-don't have examples that illustrate them clearly enough. In due time
-these issues will be addressed &mdash; just keep them in mind for now.
-
-Please note, that the Clojure developing community maintains a list of
-[coding standards for libraries](http://dev.clojure.org/display/community/Library+Coding+Standards),
-too.
-
 You can generate a PDF or an HTML copy of this guide using
 [Pandoc](http://pandoc.org/).
-
-Translations of the guide are available in the following languages:
-
-* [Chinese](https://github.com/geekerzp/clojure-style-guide/blob/master/README-zhCN.md)
-* [Japanese](https://github.com/totakke/clojure-style-guide/blob/ja/README.md)
-* [Korean](https://github.com/kwakbab/clojure-style-guide/blob/master/README-koKO.md)
-* [Portuguese](https://github.com/theSkilled/clojure-style-guide/blob/pt-BR/README.md) (Under progress)
 
 ## Table of Contents
 
@@ -481,7 +454,7 @@ pairwise constructs as found in e.g. `let` and `cond`.
 
 * <a name="stuart-sierra-namespace-guideline"></a>
   Adopt [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
-  unless there is a strong reason not to do so or this style guide says otherwise. 
+  unless there is a strong reason not to do so or this style guide says otherwise.
 <sup>[[link](#stuart-sierra-namespace-guideline)]</sup>
 
 
@@ -501,7 +474,7 @@ pairwise constructs as found in e.g. `let` and `cond`.
     [common-datomic.db :as ddb]
     [datomic.api :as d]
     ```
-    
+
 <sup>[[link](#commonly-used-namespaces)]</sup>
 
 * <a name="prefer-require-over-use"></a>

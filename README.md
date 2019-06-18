@@ -1138,10 +1138,32 @@ hints for the pairwise grouping with comments or empty lines.
 
     ;; bad
     (def someVar ...)
-    (def _some-var ...)
     (defn somefun ...)
     (defn some_fun ...)
-    (defn _some_fun ...) ; Pythonist style
+    ```
+
+* <a name="private"></a> Don't use special styles for private parts of your code.
+<sup>[[link](#private)]</sup>
+
+    ```Clojure
+    ;; good
+    (def- private-var ...)
+    (defn- private-fun ...)
+    
+    ;; bad
+    (def- _private-var ...) ; Python style
+    (defn- _private-fun ...)
+    ```
+
+* <a name="constants"></a> Don't use special styles for constants.
+<sup>[[link](#constants)]</sup>
+
+    ```Clojure
+    ;; good
+    (def some-constant 5)
+    
+    ;; bad
+    (def SOME-CONSTANT 5)
     ```
 
 * <a name="CamelCase-for-protocols-records-structs-and-types"></a>

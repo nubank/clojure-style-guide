@@ -1138,8 +1138,10 @@ hints for the pairwise grouping with comments or empty lines.
 
     ;; bad
     (def someVar ...)
+    (def _some-var ...)
     (defn somefun ...)
-    (def some_fun ...)
+    (defn some_fun ...)
+    (defn _some_fun ...) ; Pythonist style
     ```
 
 * <a name="CamelCase-for-protocols-records-structs-and-types"></a>

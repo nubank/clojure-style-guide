@@ -1147,11 +1147,11 @@ hints for the pairwise grouping with comments or empty lines.
 
     ```Clojure
     ;; good
-    (def- private-var ...)
+    (def ^:private private-var ...)
     (defn- private-fun ...)
     
     ;; bad
-    (def- _private-var ...) ; Python style
+    (def ^:private _private-var ...) ; Python style
     (defn- _private-fun ...)
     ```
 

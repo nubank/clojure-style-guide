@@ -465,7 +465,7 @@ pairwise constructs as found in e.g. `let` and `cond`.
 
 * <a name="commonly-used-namespaces"></a>
   [Stuart Sierra's namespace guidelines](https://stuartsierra.com/2015/05/10/clojure-namespace-aliases)
-  allows frequently used namespaces or estabilished conventions within the community to be whitelisted from the general rule.
+  allows frequently used namespaces or estabilished conventions within the community to be exempted from the general rule.
   The namespaces that fall within this category are listed below:
 
     ```Clojure

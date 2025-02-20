@@ -1166,10 +1166,10 @@ hints for the pairwise grouping with comments or empty lines.
     (def SOME-CONSTANT 5)
     ```
 
-* <a name="CamelCase-for-protocols-records-structs-and-types"></a>
-  Use `CamelCase` for protocols, records, structs, and types. (Keep
+* <a name="PascalCase-for-protocols-records-structs-and-types"></a>
+  Use `PascalCase` for protocols, records, structs, and types. (Keep
   acronyms like HTTP, RFC, XML uppercase.)
-<sup>[[link](#CamelCase-for-protocols-records-structs-and-types)]</sup>
+<sup>[[link](#PascalCase-for-protocols-records-structs-and-types)]</sup>
 
 * <a name="pred-with-question-mark"></a>
   The names of predicate methods (methods that return a boolean value)
